@@ -60,6 +60,15 @@ public class ServiceBuilderTest
     assertEquals(ApiMock.config.getScope(), "rss-api");
   }
 
+  @Test
+  public void shouldReturnRealmParamInCallbackUrl() {
+    builder.provider(ApiMock.class).apiKey("key").apiSecret("secret").callback("http://example.com").realm("realm").build();
+    assertEquals(ApiMock.config.getApiKey(), "key");
+    assertEquals(ApiMock.config.getApiKey(), "secret");
+    assertEquals(ApiMock.config.getApiKey(), "realm");
+    assertEquals(ApiMock.config.getApiKey(), "http://example.com");
+  }
+
   public static class ApiMock implements Api
   {
     public static OAuthConfig config;

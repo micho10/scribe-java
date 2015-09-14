@@ -15,7 +15,8 @@ public class OAuthConfig
   private final SignatureType signatureType;
   private final String scope;
   private final OutputStream debugStream;
-  
+  private String realm;
+
   public OAuthConfig(String key, String secret)
   {
     this(key, secret, null, null, null, null);
@@ -59,6 +60,14 @@ public class OAuthConfig
   public boolean hasScope()
   {
     return scope != null;
+  }
+
+  public String getRealm() {
+    return realm;
+  }
+
+  public void setRealm(String realm) {
+    this.realm = realm;
   }
 
   public void log(String message)
