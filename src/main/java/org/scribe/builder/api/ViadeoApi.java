@@ -12,18 +12,27 @@ public class ViadeoApi extends DefaultApi20
   private static final String AUTHORIZE_URL = "https://secure.viadeo.com/oauth-provider/authorize2?client_id=%s&redirect_uri=%s&response_type=code";
   private static final String SCOPED_AUTHORIZE_URL = AUTHORIZE_URL + "&scope=%s";
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public AccessTokenExtractor getAccessTokenExtractor()
   {
     return new JsonTokenExtractor();
   }
-  
+
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return "https://secure.viadeo.com/oauth-provider/access_token2?grant_type=authorization_code";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(OAuthConfig config)
   {

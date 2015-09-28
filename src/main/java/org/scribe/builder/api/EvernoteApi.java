@@ -13,18 +13,27 @@ public class EvernoteApi extends DefaultApi10a
     return "https://www.evernote.com";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getRequestTokenEndpoint()
   {
     return serviceUrl() + "/oauth";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return serviceUrl() + "/oauth";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(Token requestToken)
   {
@@ -36,6 +45,9 @@ public class EvernoteApi extends DefaultApi10a
    */
   public static class Sandbox extends EvernoteApi
   {
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected String serviceUrl() {
       return "https://sandbox.evernote.com";
@@ -47,6 +59,9 @@ public class EvernoteApi extends DefaultApi10a
    */
   public static class Yinxiang extends EvernoteApi
   {
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected String serviceUrl() {
       return "https://app.yinxiang.com";

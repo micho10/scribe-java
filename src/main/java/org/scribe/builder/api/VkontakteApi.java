@@ -13,12 +13,18 @@ public class VkontakteApi extends DefaultApi20
   private static final String AUTHORIZE_URL = "https://oauth.vk.com/authorize?client_id=%s&redirect_uri=%s&response_type=code";
   private static final String SCOPED_AUTHORIZE_URL = String.format("%s&scope=%%s", AUTHORIZE_URL);
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return "https://api.vkontakte.ru/oauth/access_token";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(OAuthConfig config)
   {
@@ -33,6 +39,9 @@ public class VkontakteApi extends DefaultApi20
     }
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public AccessTokenExtractor getAccessTokenExtractor()
   {

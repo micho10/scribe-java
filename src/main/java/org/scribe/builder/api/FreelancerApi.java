@@ -6,30 +6,45 @@ public class FreelancerApi extends DefaultApi10a
 {
   private static final String AUTHORIZATION_URL = "http://www.freelancer.com/users/api-token/auth.php?oauth_token=%s";
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return "http://api.freelancer.com/RequestAccessToken/requestAccessToken.xml?";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getRequestTokenEndpoint()
   {
     return "http://api.freelancer.com/RequestRequestToken/requestRequestToken.xml";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public Verb getAccessTokenVerb()
   {
     return Verb.GET;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public Verb getRequestTokenVerb()
   {
     return Verb.GET;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(Token requestToken)
   {
@@ -40,18 +55,27 @@ public class FreelancerApi extends DefaultApi10a
   {
     private static final String SANDBOX_AUTHORIZATION_URL = "http://www.sandbox.freelancer.com/users/api-token/auth.php";
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getRequestTokenEndpoint()
     {
       return "http://api.sandbox.freelancer.com/RequestRequestToken/requestRequestToken.xml";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getAccessTokenEndpoint()
     {
       return "http://api.sandbox.freelancer.com/RequestAccessToken/requestAccessToken.xml?";
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String getAuthorizationUrl(Token requestToken)
     {

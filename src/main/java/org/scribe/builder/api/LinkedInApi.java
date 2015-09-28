@@ -20,12 +20,18 @@ public class LinkedInApi extends DefaultApi10a
     this.scopes = Collections.unmodifiableSet(scopes);
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return "https://api.linkedin.com/uas/oauth/accessToken";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getRequestTokenEndpoint()
   {
@@ -42,6 +48,9 @@ public class LinkedInApi extends DefaultApi10a
     return builder.substring(1);
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(Token requestToken)
   {

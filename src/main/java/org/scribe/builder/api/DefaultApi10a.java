@@ -125,14 +125,9 @@ public abstract class DefaultApi10a implements Api
    * @return the URL where you should redirect your users
    */
   public abstract String getAuthorizationUrl(Token requestToken);
-  
+
   /**
-   * Returns the {@link OAuthService} for this Api
-   * 
-   * @param apiKey Key
-   * @param apiSecret Api Secret
-   * @param callback OAuth callback (either URL or 'oob')
-   * @param scope OAuth scope (optional) 
+   * {@inheritDoc}
    */
   public OAuthService createService(OAuthConfig config)
   {

@@ -8,12 +8,18 @@ public class Foursquare2Api extends DefaultApi20
 {
   private static final String AUTHORIZATION_URL = "https://foursquare.com/oauth2/authenticate?client_id=%s&response_type=code&redirect_uri=%s";
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return "https://foursquare.com/oauth2/access_token?grant_type=authorization_code";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(OAuthConfig config)
   {
@@ -21,6 +27,9 @@ public class Foursquare2Api extends DefaultApi20
     return String.format(AUTHORIZATION_URL, config.getApiKey(), OAuthEncoder.encode(config.getCallback()));
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public AccessTokenExtractor getAccessTokenExtractor()
   {

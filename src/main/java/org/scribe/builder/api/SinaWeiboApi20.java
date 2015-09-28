@@ -12,24 +12,36 @@ public class SinaWeiboApi20 extends DefaultApi20
   private static final String AUTHORIZE_URL = "https://api.weibo.com/oauth2/authorize?client_id=%s&redirect_uri=%s&response_type=code";
   private static final String SCOPED_AUTHORIZE_URL = AUTHORIZE_URL + "&scope=%s";
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public Verb getAccessTokenVerb()
   {
     return Verb.POST;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public AccessTokenExtractor getAccessTokenExtractor()
   {
     return new JsonTokenExtractor();
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return "https://api.weibo.com/oauth2/access_token?grant_type=authorization_code";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(OAuthConfig config)
   {

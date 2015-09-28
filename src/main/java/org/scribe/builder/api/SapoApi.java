@@ -8,30 +8,45 @@ public class SapoApi extends DefaultApi10a
   private static final String ACCESS_URL = "https://id.sapo.pt/oauth/access_token";
   private static final String REQUEST_URL = "https://id.sapo.pt/oauth/request_token";
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return ACCESS_URL;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getRequestTokenEndpoint()
   {
     return REQUEST_URL;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(Token requestToken)
   {
     return String.format(AUTHORIZE_URL, requestToken.getToken());
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public Verb getRequestTokenVerb()
   {
     return Verb.GET;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public Verb getAccessTokenVerb()
   {

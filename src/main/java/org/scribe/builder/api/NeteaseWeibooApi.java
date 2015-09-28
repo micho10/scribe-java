@@ -9,33 +9,39 @@ public class NeteaseWeibooApi extends DefaultApi10a
 	private static final String AUTHORIZE_URL = "http://api.t.163.com/oauth/authorize?oauth_token=%s";
 	private static final String AUTHENTICATE_URL = "http://api.t.163.com/oauth/authenticate?oauth_token=%s";
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getRequestTokenEndpoint() 
 	{
 		return REQUEST_TOKEN_URL;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getAccessTokenEndpoint()
 	{
 		return ACCESS_TOKEN_URL;
 	}
 
-	@Override
 	/**
-	 * this method will ignore your callback
+	 * This method will ignore your callback
 	 * if you're creating a desktop client please choose this url
 	 * else your can call getAuthenticateUrl
 	 * 
 	 * via http://open.t.163.com/wiki/index.php?title=%E8%AF%B7%E6%B1%82%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83Token(oauth/authorize)
 	 */
+	@Override
 	public String getAuthorizationUrl(Token requestToken)
 	{
 		return String.format(AUTHORIZE_URL, requestToken.getToken());
 	}
 
 	/**
-	 * this method is for web client with callback url
+	 * This method is for web client with callback url
 	 * if you're creating a desktop client please call getAuthorizationUrl 
 	 * 
 	 * via http://open.t.163.com/wiki/index.php?title=%E8%AF%B7%E6%B1%82%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83Token(oauth/authenticate)

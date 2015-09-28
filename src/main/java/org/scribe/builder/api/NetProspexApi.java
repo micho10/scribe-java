@@ -8,18 +8,27 @@ public class NetProspexApi extends DefaultApi10a
   private static final String ACCESS_TOKEN_URL = "https://api.netprospex.com/1.0/oauth/access-token";
   private static final String AUTHORIZE_URL = "https://api.netprospex.com/1.0/oauth/authorize?oauth_token=%s";
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getRequestTokenEndpoint()
   {
     return REQUEST_TOKEN_URL;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return ACCESS_TOKEN_URL;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(Token requestToken)
   {

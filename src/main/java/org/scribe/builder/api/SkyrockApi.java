@@ -14,19 +14,28 @@ public class SkyrockApi extends DefaultApi10a
   private static final String REQUEST_TOKEN_RESOURCE = "/oauth/initiate";
   private static final String AUTHORIZE_URL = "/oauth/authorize?oauth_token=%s";
   private static final String ACCESS_TOKEN_RESOURCE = "/oauth/token";
-  
+
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return API_ENDPOINT + ACCESS_TOKEN_RESOURCE;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getRequestTokenEndpoint()
   {
     return API_ENDPOINT + REQUEST_TOKEN_RESOURCE;
   }
-  
+
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(Token requestToken)
   {

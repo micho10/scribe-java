@@ -10,24 +10,36 @@ public class ConstantContactApi2 extends DefaultApi20
 {
   private static final String AUTHORIZE_URL = "https://oauth2.constantcontact.com/oauth2/oauth/siteowner/authorize?client_id=%s&response_type=code&redirect_uri=%s";
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return "https://oauth2.constantcontact.com/oauth2/oauth/token?grant_type=authorization_code";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(OAuthConfig config)
   {
     return String.format(AUTHORIZE_URL, config.getApiKey(), OAuthEncoder.encode(config.getCallback()));
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public Verb getAccessTokenVerb()
   {
     return Verb.POST;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public AccessTokenExtractor getAccessTokenExtractor()
   {

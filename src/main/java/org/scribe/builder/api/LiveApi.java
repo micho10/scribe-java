@@ -10,12 +10,18 @@ public class LiveApi extends DefaultApi20
 	private static final String AUTHORIZE_URL = "https://login.live.com/oauth20_authorize.srf?client_id=%s&redirect_uri=%s&response_type=code";
 	private static final String SCOPED_AUTHORIZE_URL = AUTHORIZE_URL + "&scope=%s";
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getAccessTokenEndpoint()
 	{
 		return "https://login.live.com/oauth20_token.srf?grant_type=authorization_code";
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getAuthorizationUrl(OAuthConfig config)
 	{
@@ -26,12 +32,15 @@ public class LiveApi extends DefaultApi20
 		{
 			return String.format(SCOPED_AUTHORIZE_URL, config.getApiKey(), OAuthEncoder.encode(config.getCallback()), OAuthEncoder.encode(config.getScope()));
 		}
-    else
+	    else
 		{
 			return String.format(AUTHORIZE_URL, config.getApiKey(), OAuthEncoder.encode(config.getCallback()));
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public AccessTokenExtractor getAccessTokenExtractor()
 	{

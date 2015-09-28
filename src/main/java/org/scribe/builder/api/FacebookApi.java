@@ -9,12 +9,18 @@ public class FacebookApi extends DefaultApi20
   private static final String AUTHORIZE_URL = "https://www.facebook.com/v2.0/dialog/oauth?client_id=%s&redirect_uri=%s";
   private static final String SCOPED_AUTHORIZE_URL = AUTHORIZE_URL + "&scope=%s";
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return "https://graph.facebook.com/v2.0/oauth/access_token";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(OAuthConfig config)
   {

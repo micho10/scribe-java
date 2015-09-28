@@ -8,18 +8,27 @@ public class GetGlueApi extends DefaultApi10a
   private static final String REQUEST_TOKEN_RESOURCE = "https://api.getglue.com/oauth/request_token";
   private static final String ACCESS_TOKEN_RESOURCE = "https://api.getglue.com/oauth/access_token";
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return ACCESS_TOKEN_RESOURCE;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getRequestTokenEndpoint()
   {
     return REQUEST_TOKEN_RESOURCE;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(Token requestToken)
   {

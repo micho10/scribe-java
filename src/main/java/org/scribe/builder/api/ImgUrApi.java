@@ -11,18 +11,27 @@ import org.scribe.model.*;
 public class ImgUrApi extends DefaultApi10a
 {
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getRequestTokenEndpoint()
   {
     return "https://api.imgur.com/oauth/request_token";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAccessTokenEndpoint()
   {
     return "https://api.imgur.com/oauth/access_token";
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String getAuthorizationUrl(Token requestToken)
   {
