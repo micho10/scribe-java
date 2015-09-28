@@ -27,6 +27,12 @@ public class BaseStringExtractorImpl implements BaseStringExtractor
     return String.format(AMPERSAND_SEPARATED_STRING, verb, url, params);
   }
 
+  /**
+   * Extract all the parameters from the request and return them as a sorted OAuth base string.
+   *
+   * @param request the OAuth request
+   * @return a sorted OAuth base string
+   */
   private String getSortedAndEncodedParams(OAuthRequest request)
   {
     ParameterList params = new ParameterList();
@@ -36,6 +42,11 @@ public class BaseStringExtractorImpl implements BaseStringExtractor
     return params.sort().asOauthBaseString();
   }
 
+  /**
+   * Perform basic validations on the request.
+   *
+   * @param request the OAuth request
+   */
   private void checkPreconditions(OAuthRequest request)
   {
     Preconditions.checkNotNull(request, "Cannot extract base string from a null object");

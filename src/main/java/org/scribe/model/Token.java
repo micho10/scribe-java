@@ -73,6 +73,9 @@ public class Token implements Serializable
     return value;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String toString()
   {
@@ -97,6 +100,9 @@ public class Token implements Serializable
     return new Token("", "");
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public boolean equals(Object o)
   {
@@ -107,6 +113,9 @@ public class Token implements Serializable
     return token.equals(that.token) && secret.equals(that.secret);
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public int hashCode()
   {

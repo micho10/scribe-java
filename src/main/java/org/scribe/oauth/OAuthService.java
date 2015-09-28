@@ -16,7 +16,7 @@ public interface OAuthService
    * 
    * @return request token
    */
-  public Token getRequestToken();
+  Token getRequestToken();
 
   /**
    * Retrieve the access token
@@ -25,7 +25,7 @@ public interface OAuthService
    * @param verifier verifier code
    * @return access token
    */
-  public Token getAccessToken(Token requestToken, Verifier verifier);
+  Token getAccessToken(Token requestToken, Verifier verifier);
 
   /**
    * Signs am OAuth request
@@ -33,14 +33,14 @@ public interface OAuthService
    * @param accessToken access token (obtained previously)
    * @param request request to sign
    */
-  public void signRequest(Token accessToken, OAuthRequest request);
+  void signRequest(Token accessToken, OAuthRequest request);
 
   /**
    * Returns the OAuth version of the service.
    * 
    * @return oauth version as string
    */
-  public String getVersion();
+  String getVersion();
   
   /**
    * Returns the URL where you should redirect your users to authenticate
@@ -49,5 +49,5 @@ public interface OAuthService
    * @param requestToken the request token you need to authorize
    * @return the URL where you should redirect your users
    */
-  public String getAuthorizationUrl(Token requestToken);
+  String getAuthorizationUrl(Token requestToken);
 }

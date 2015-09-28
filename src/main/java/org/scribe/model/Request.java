@@ -53,7 +53,8 @@ public class Request
 
   /**
    * Execute the request and return a {@link Response}
-   * 
+   *
+   * @param tuner to modify the request
    * @return Http Response
    * @throws RuntimeException
    *           if the connection cannot be created.
@@ -187,7 +188,7 @@ public class Request
   /**
    * Overloaded version for byte arrays
    *
-   * @param payload
+   * @param payload the body of the request
    */
   public void addPayload(byte[] payload)
   {
@@ -353,8 +354,8 @@ public class Request
   /**
    * Sets whether the underlying Http Connection is persistent or not.
    *
-   * @see http://download.oracle.com/javase/1.5.0/docs/guide/net/http-keepalive.html
-   * @param connectionKeepAlive
+   * @see <a href="http://download.oracle.com/javase/1.5.0/docs/guide/net/http-keepalive.html"></a>
+   * @param connectionKeepAlive flag to indicate whether to keep the connection alive or not.
    */
   public void setConnectionKeepAlive(boolean connectionKeepAlive)
   {
@@ -366,8 +367,8 @@ public class Request
    *
    * Defaults to true (follow redirects)
    *
-   * @see http://docs.oracle.com/javase/6/docs/api/java/net/HttpURLConnection.html#setInstanceFollowRedirects(boolean)
-   * @param followRedirects
+   * @see <a href="http://docs.oracle.com/javase/6/docs/api/java/net/HttpURLConnection.html#setInstanceFollowRedirects(boolean)"></a>
+   * @param followRedirects flag to indicate whether to follow redirects or not.
    */
   public void setFollowRedirects(boolean followRedirects)
   {
@@ -382,6 +383,9 @@ public class Request
     this.connection = connection;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String toString()
   {

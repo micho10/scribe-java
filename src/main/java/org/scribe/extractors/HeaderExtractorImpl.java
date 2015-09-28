@@ -45,6 +45,11 @@ public class HeaderExtractorImpl implements HeaderExtractor
     return header.toString();
   }
 
+  /**
+   * Perform basic validations on the request.
+   *
+   * @param request the OAuth request
+   */
   private void checkPreconditions(OAuthRequest request)
   {
     Preconditions.checkNotNull(request, "Cannot extract a header from a null object");

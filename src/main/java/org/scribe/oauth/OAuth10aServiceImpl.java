@@ -40,6 +40,9 @@ public class OAuth10aServiceImpl implements OAuthService
     return getRequestToken(new TimeoutTuner(timeout, unit));
   }
 
+  /**
+   * {@inheritDoc}
+   */
   public Token getRequestToken()
   {
     return getRequestToken(2, TimeUnit.SECONDS);
@@ -77,14 +80,14 @@ public class OAuth10aServiceImpl implements OAuthService
     config.log("appended additional OAuth parameters: " + MapUtils.toString(request.getOauthParameters()));
   }
 
-  /**
-   * {@inheritDoc}
-   */
   public Token getAccessToken(Token requestToken, Verifier verifier, int timeout, TimeUnit unit)
   {
     return getAccessToken(requestToken, verifier, new TimeoutTuner(timeout, unit));
   }
 
+  /**
+   * {@inheritDoc}
+   */
   public Token getAccessToken(Token requestToken, Verifier verifier)
   {
     return getAccessToken(requestToken, verifier, 2, TimeUnit.SECONDS);
@@ -187,6 +190,9 @@ public class OAuth10aServiceImpl implements OAuthService
       this.unit = unit;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void tune(Request request)
     {

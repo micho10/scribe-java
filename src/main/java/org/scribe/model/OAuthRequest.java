@@ -72,6 +72,9 @@ public class OAuthRequest extends Request
     return realm;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   @Override
   public String toString()
   {
